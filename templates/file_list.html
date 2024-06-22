@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% block title %}File List{% endblock %}
+{% block content %}
+    <div class="container mt-4">
+        <ul class="list-group">
+            {% for data in all_data %}
+                <li class="list-group-item">
+                    <a href="{% url 'single_file' data.id %}">{{ data.data.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
